@@ -2,9 +2,27 @@
 #define EGOR_WORKERS_H
 #include "../Employees.h"
 
-class Workers: public Employees {
+class Workers : public Employees {
+protected:
+    int workHours; // Количество рабочих часов в день
 
+public:
+    // Конструктор
+    Workers(const std::string& parkingName, int capacity, const std::string& position, double salary, int workHours = 8);
+
+    // Виртуальный деструктор
+    virtual ~Workers();
+
+    // Методы
+    int getWorkHours() const; // Получить рабочие часы
+    void setWorkHours(int hours); // Установить рабочие часы
+
+    // Чисто виртуальные методы остаются не изменены
+    virtual void work() const override = 0;
+    virtual void showEmployeeInfo() const override = 0;
+
+    // Перегрузка оператора вывода для класса Workers
+    friend std::ostream& operator<<(std::ostream& os, const Workers& worker);
 };
 
-
-#endif
+#endif // EGOR_WORKERS_H
