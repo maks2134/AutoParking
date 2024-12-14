@@ -19,6 +19,18 @@ public:
     void calculateIncome(double income);        // Подсчет общей прибыли
     void logShift(const std::string& employee); // Учет смен работников
     void showShifts() const;                    // Вывод всех смен
+
+    void showInfo() override {
+        std::cout << "Parking Manager: " << name
+                  << ", Capacity: " << capacity
+                  << ", Salary: $" << salary << std::endl;
+    }
+
+    void calculateIncome() override {
+        int income = capacity * 10; // Example calculation
+        std::cout << "Estimated Income: $" << income << std::endl;
+    }
+
 };
 
 #endif //EGOR_MANAGER_H

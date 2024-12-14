@@ -18,6 +18,17 @@ public:
     void showEmployeeInfo() const override;              // Вывод информации об администраторе
     void recordCar(const std::string& plate);            // Записать автомобиль
     void showRecordedCars() const;                       // Показать все зарегистрированные автомобили
+
+    void showInfo() override {
+        std::cout << "Parking Manager: " << name
+                  << ", Capacity: " << capacity
+                  << ", Salary: $" << salary << std::endl;
+    }
+
+    void calculateIncome() override {
+        int income = capacity * 10; // Example calculation
+        std::cout << "Estimated Income: $" << income << std::endl;
+    }
 };
 
 

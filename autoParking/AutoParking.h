@@ -17,11 +17,13 @@ public:
     // Виртуальный деструктор
     virtual ~AutoParking();
 
-    virtual void showInfo() const = 0; // Вывод информации о парковке
-    virtual void calculateIncome() const = 0; // Расчет доходов от парковки
+    virtual void showInfo() = 0; // Вывод информации о парковке
+    virtual void calculateIncome() = 0; // Расчет доходов от парковки
 
     // Перегрузка оператора вывода
     friend std::ostream& operator<<(std::ostream& os, const AutoParking& parking);
+
+
 };
 
 #endif

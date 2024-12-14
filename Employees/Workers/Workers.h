@@ -21,6 +21,17 @@ public:
     virtual void work() const override = 0;
     virtual void showEmployeeInfo() const override = 0;
 
+    void showInfo() {
+        std::cout << "Parking Manager: " << name
+                  << ", Capacity: " << capacity
+                  << ", Salary: $" << salary << std::endl;
+    }
+
+    void calculateIncome() {
+        int income = capacity * 10; // Example calculation
+        std::cout << "Estimated Income: $" << income << std::endl;
+    }
+
     // Перегрузка оператора вывода для класса Workers
     friend std::ostream& operator<<(std::ostream& os, const Workers& worker);
 };

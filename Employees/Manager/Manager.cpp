@@ -28,3 +28,4 @@ void Manager::showShifts() const {
         std::cout << "- " << shift << std::endl;
     }
 }
+

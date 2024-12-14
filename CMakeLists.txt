@@ -28,4 +28,26 @@ add_executable(Egor main.cpp
         visitors/Guests/Guests.h
         visitors/Clients/Clients.cpp
         visitors/Clients/Clients.h
+        Exception/ParkingException.cpp
+        Exception/ParkingException.h
+        Exception/InvalidInputException.cpp
+        Exception/InvalidInputException.h
+        Exception/CapacityExceededException.cpp
+        Exception/CapacityExceededException.h
+        Exception/ParkingSpotException.cpp
+        Exception/ParkingSpotException.h
+        Exception/VisitorException.cpp
+        Exception/VisitorException.h
+        File/FileHandler.cpp
+        File/FileHandler.h
+        File/TextFileHandler.cpp
+        File/TextFileHandler.h
+        File/BinaryFileHandler.cpp
+        File/BinaryFileHandler.h
+        algoritm/HashTable.h
+        algoritm/QuickSort.h
+        auth/User.cpp
+        auth/User.h
+        auth/Authentication.cpp
+        auth/Authentication.h
 )
