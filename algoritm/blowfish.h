@@ -1,0 +1,20 @@
+#ifndef EGOR_BLOWFISH_H
+#define EGOR_BLOWFISH_H
+#include <stdint.h>
+
+class Blowfish {
+public:
+    void SetKey(const unsigned char* key, int byte_length);
+    void Encrypt(unsigned char* dst, const unsigned char* src, int byte_length) const;
+    void Decrypt(unsigned char* dst, const unsigned char* src, int byte_length) const;
+
+private:
+    void EncryptBlock(uint32_t *left, uint32_t *right) const;
+    void DecryptBlock(uint32_t *left, uint32_t *right) const;
+    uint32_t Feistel(uint32_t value) const;
+
+private:
+    uint32_t pary_[18];
+    uint32_t sbox_[4][256];
+};
+#endif //EGOR_BLOWFISH_H

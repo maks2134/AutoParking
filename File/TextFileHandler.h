@@ -1,22 +1,24 @@
-#ifndef TEXT_FILE_HANDLER_H
-#define TEXT_FILE_HANDLER_H
+#ifndef TEXTFILEHANDLER_H
+#define TEXTFILEHANDLER_H
 
-#include "FileHandler.h"
+#include "../auth/User.h"
+#include <fstream>
 #include <vector>
 
-// Класс для работы с текстовыми файлами
-class TextFileHandler : public FileHandler {
+class TextFileHandler {
+private:
+    std::string path;
+    std::ifstream fileStream;
+
 public:
-    explicit TextFileHandler(const std::string& path);
-
-    // Чтение всех строк из файла
+    TextFileHandler(const std::string& path);
     std::vector<std::string> readAllLines();
-
-    // Запись строки в файл
     void writeLine(const std::string& line);
-
-    // Чтение содержимого файла в виде одной строки
     std::string readAll();
+
+    bool userExists(const User& user);
+    void writeUser(const User& user);
+    bool loadUserByLogin(const std::string& login, User& user);
 };
 
-#endif // TEXT_FILE_HANDLER_H
+#endif // TEXTFILEHANDLER_H

@@ -46,8 +46,10 @@ add_executable(Egor main.cpp
         File/BinaryFileHandler.h
         algoritm/HashTable.h
         algoritm/QuickSort.h
+        algoritm/blowfish.cpp
+        algoritm/blowfish.h
         auth/User.cpp
         auth/User.h
-        auth/Authentication.cpp
-        auth/Authentication.h
+        auth/UserManager.cpp
+        auth/UserManager.h
 )
